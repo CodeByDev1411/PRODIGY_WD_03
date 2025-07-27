@@ -1,0 +1,128 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3, #ffb347);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+  transition: background 0.5s ease;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+body.ai-mode {
+  background: linear-gradient(135deg, #36d1dc, #5b86e5, #00c6ff);
+  animation: gradientBG 10s ease infinite;
+}
+
+.container {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 25px 30px;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.container.ai-mode {
+  background: rgba(230, 245, 255, 0.9);
+}
+
+h1 {
+  margin-bottom: 15px;
+  font-size: 2.5rem;
+  color: #333;
+  letter-spacing: 2px;
+}
+
+.mode-selector {
+  margin-bottom: 15px;
+}
+
+button {
+  margin: 6px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  background: linear-gradient(45deg, #6608cb, #2575fc);
+  transition: transform 0.2s, box-shadow 0.2s, background 0.5s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+#aiBtn {
+  background: linear-gradient(45deg, #00c6ff, #0072ff);
+}
+
+#resetBtn {
+  background: linear-gradient(45deg, #ff4b2b, #ff416c);
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 7px;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background: #f0f0f0;
+  font-size: 2.7em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background 0.3s, transform 0.2s;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.cell:hover {
+  background: #ddd;
+  transform: scale(1.05);
+}
+
+.status {
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #333;
+  transition: color 0.5s;
+}
+
+.fade-out {
+  animation: fadeOut 0.5s forwards;
+}
+
+.fade-in {
+  animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0; transform: scale(0.9); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
